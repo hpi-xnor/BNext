@@ -11,16 +11,16 @@ from utils_quant import *
 # stage ratio: 1:1:3:1
 stage_out_channel_tiny = [32] + [64] + [128] * 2 + [256] * 2 + [512] * 6 + [1024] * 2
 
-# stage ratio 1:1::3:1
+# stage ratio 1:1:3:1
 stage_out_channel_small = [48] + [96] + [192] * 2 + [384] * 2 + [768] * 6 + [1536] * 2
 
-# stage ratio 1:1:3:1
+# stage ratio 2:2:4:2
 stage_out_channel_middle = [48] + [96] + [192] * 4 + [384] * 4 + [768] * 8 + [1536] * 4
 
-# stage ratio 1:1:4:1
-stage_out_channel_large = [48] + [96] + [192] * 4 + [384] * 4 + [768] * 16 + [1536] * 4
+# stage ratio 2:2:4:2
+#stage_out_channel_large = [48] + [96] + [192] * 4 + [384] * 4 + [768] * 16 + [1536] * 4
 
-# stage ratio 1:1:4:1
+# stage ratio 2:2:8:2
 stage_out_channel_super = [64] + [128] + [256] * 4 + [512] * 4 + [1024] * 16 + [2048] * 4
 
 

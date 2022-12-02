@@ -11,17 +11,17 @@ from timm.models.layers import trunc_normal_, DropPath
 #stage ratio: 1:1:3:1
 stage_out_channel_tiny = [32] + [64] + [128] * 2 + [256] * 2 + [512] * 6 + [1024] * 2
 
-#stage ratio 1:1::3:1
+#stage ratio 1:1:3:1
 stage_out_channel_small = [48] + [96] + [192] * 2 + [384] * 2 + [768] * 6 + [1536] * 2
 
-#stage ratio 1:1:3:1
+#stage ratio 2:2:4:2
 stage_out_channel_middle = [48] + [96] + [192] * 4 + [384] * 4 + [768] * 8 + [1536] *4
 
-#stage ratio 1:1:4:1
-stage_out_channel_large = [48] + [96] + [192] * 4 + [384] * 4 + [768] * 16 + [1536] * 4
+#stage ratio 2:2:4:2
+#stage_out_channel_large = [48] + [96] + [192] * 4 + [384] * 4 + [768] * 16 + [1536] * 4
 
-#stage ratio 1:1:4:1
-stage_out_channel_super = [64] + [128] + [256] * 4 + [512] * 4 + [1024] * 16 + [2048] * 4
+#stage ratio 2:2:8:2
+stage_out_channel_large = [64] + [128] + [256] * 4 + [512] * 4 + [1024] * 16 + [2048] * 4
 
 
 
@@ -114,6 +114,8 @@ class HardBinaryConv(nn.Module):
             binary_weights = binary_weights_no_grad.detach() - cliped_weights.detach() + cliped_weights
         else:
             binary_weights =  binary_weights_no_grad
+        print(x)
+        print(binary_weights)
         y = F.conv2d(x, binary_weights, stride=self.stride, padding=self.padding, groups = self.groups)
 
         return y
@@ -436,8 +438,8 @@ class BNext(nn.Module):
             stage_out_channel = stage_out_channel_middle
         elif size == "large":
             stage_out_channel = stage_out_channel_large
-        elif size == "super":
-            stage_out_channel = stage_out_channel_super
+        #elif size == "super":
+        #    stage_out_channel = stage_out_channel_super
         else:
             raise ValueError("The size is not defined!")
 
