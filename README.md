@@ -5,7 +5,7 @@ This is the official code of paper ["Join The High Accuracy Club on ImageNet Dat
 
 Binary neural networks are the extreme case of network quantization, which has long been thought of as a potential edge machine learning solution. However, the significant accuracy gap to the full-precision counterparts restricts their creative potential for mobile applications. In this work, we revisit the potential of binary neural networks and focus on a compelling but unanswered problem: how can a binary neural network achieve the crucial accuracy level (e.g., 80%) on ILSVRC-2012 ImageNet? We achieve this goal by enhancing the optimization process from three complementary perspectives: (1) We design a novel binary architecture BNext based on a comprehensive study of binary architectures and their optimization process. (2) We propose a novel knowledge-distillation technique to alleviate the counter-intuitive overfitting problem observed when attempting to train extremely accurate binary models. (3) We analyze the data augmentation pipeline for binary networks and modernize it with up-to-date techniques from full-precision models. The evaluation results on ImageNet show that BNext, for the first time, pushes the binary model accuracy boundary to 80.57% and significantly outperforms all the existing binary networks.
 
-![Pipeline](https://user-images.githubusercontent.com/24189567/187410143-b9f80b79-e3bf-4516-b90e-6edc2e1e33e8.jpg)
+![Pipeline](https://user-images.githubusercontent.com/24189567/205317106-9a2448f7-116b-4f89-bdfb-c2d148287f52.jpg)
 * **Figure**: The architecture of our design, constructed based on an optimized MobileNet backbone and the proposed modules. “Processor” is the core binary convolution module, enhanced using channel-wise mix-to-binary attention branch, and “BN” represents batch normalization layer. The basic block is consisted of an element attention module and a binary feed forward network.
 
 ![Convolution Comparison](https://user-images.githubusercontent.com/24189567/204559496-1729c13d-4149-43b5-b674-d0e3df81a72a.jpg)
@@ -29,7 +29,8 @@ Binary neural networks are the extreme case of network quantization, which has l
 ## 4.Training Procedure
 ![Training Procedure](https://user-images.githubusercontent.com/24189567/204558527-04de1a26-bfce-4a16-87f9-f781b13988f7.jpg)
 * **Figure**: The loss curve, accuracy curve and temperature curve during the optimization process 
-### 5.SOTA Comparison on ImageNet
-![comparison_sota](https://user-images.githubusercontent.com/24189567/204547298-291194f3-ed7d-4b84-9c8b-dc45dfa668da.png)
-* **Figure**: Comparison with the state of the art binary neural network on ImageNet dataset.
+
+### 5. Feature Visualization
+![Feature_Visualization_BNext_Tiny](https://user-images.githubusercontent.com/24189567/205326008-fde4e29b-e52a-4a90-81f9-88a45e736c8e.jpg)
+* **Figure**: Visualizing the diversity of binary features in BNext-T model. The input image is resized as 1024x1024.
 
