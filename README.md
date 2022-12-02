@@ -27,7 +27,7 @@ Binary neural networks are the extreme case of network quantization, which has l
 ## 4.Training Procedure
 ![Training Procedure](https://user-images.githubusercontent.com/24189567/204558527-04de1a26-bfce-4a16-87f9-f781b13988f7.jpg)
 * **Figure**: The loss curve, accuracy curve and temperature curve during the optimization process 
-
+### 5.SOTA Comparison on ImageNet
 ![comparison_sota](https://user-images.githubusercontent.com/24189567/204547298-291194f3-ed7d-4b84-9c8b-dc45dfa668da.png)
 * **Figure**: Comparison with the state of the art binary neural network on ImageNet dataset.
 
