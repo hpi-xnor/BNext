@@ -18,19 +18,12 @@ Binary neural networks are the extreme case of network quantization, which has l
 |BNext-S|  76.1 % |  [BNext-S](https://owncloud.hpi.de/s/bHLM7lqfzm58kIW)                  |
 |BNext-M|  78.3 % |  [BNext-M](https://owncloud.hpi.de/s/jU5m9v4ADsJKZsa)                  |
 |BNext-L|  80.6 % |  [BNext-L](https://owncloud.hpi.de/s/zQHrlxiQ6XbjCbz)                  |
-
-### 3.Loss Landscape Visualization
-![image](https://user-images.githubusercontent.com/24189567/188886411-7a478445-913b-41da-8183-7ab25688aca4.png)
-* **Figure**: 3D loss landscape visualization comparison.
-
-![image](https://user-images.githubusercontent.com/24189567/188886373-e532b4a5-6863-4d41-8d15-d3a7e98ff6d8.png)
-* **Figure**: 2D loss contour line visualization comparison.
  
-## 4.Training Procedure
+## 3.Training Procedure
 ![Training Procedure](https://user-images.githubusercontent.com/24189567/204558527-04de1a26-bfce-4a16-87f9-f781b13988f7.jpg)
 * **Figure**: The loss curve, accuracy curve and temperature curve during the optimization process 
 
-### 5. Feature Visualization
+### 4. Feature Visualization
 ![Feature_Visualization_BNext_Tiny](https://user-images.githubusercontent.com/24189567/205326008-fde4e29b-e52a-4a90-81f9-88a45e736c8e.jpg)
 * **Figure**: Visualizing the diversity of binary features in BNext-T model. The input image is resized as 1024x1024.
 
