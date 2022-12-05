@@ -273,7 +273,7 @@ def main_worker(gpu, ngpus_per_node, args):
             print("using efficient_b0 as assistant teacher") 
 
         if args.assistant_teacher_num >= 2:
-            if args.model == "bnext_super":
+            if args.model == "bnext_large":
                 assistant_teachers.append(models.efficientnet_b4(pretrained=True))
                 print("using efficient_b4 as assistant teacher")    
             else:
@@ -281,7 +281,7 @@ def main_worker(gpu, ngpus_per_node, args):
                 print("using efficient_b2 as assistant teacher")
         
         if args.assistant_teacher_num >= 3:
-            if args.model == "bnext_super":
+            if args.model == "bnext_large":
                 assistant_teachers.append(models.convnext_tiny(pretrained=True))
                 print("using convnext_tiny as assistant teacher")
             else:
@@ -311,7 +311,7 @@ def main_worker(gpu, ngpus_per_node, args):
             print("using efficient_b2 as main teacher")
         
         else:
-            if args.model == "bnext_large" or args.model == "bnext_super":
+            if args.model == "bnext_large":
                 model_teacher.append(models.convnext_tiny(pretrained = True))
                 print("using convnext_tiny as main teacher")
             else:
@@ -339,8 +339,8 @@ def main_worker(gpu, ngpus_per_node, args):
         model_student = BNext(num_classes = CLASSES, size = "middle", ELM_Attention = args.elm_attention, Infor_Recoupling = args.infor_recoupling)
     elif args.model == "bnext_large":
         model_student = BNext(num_classes = CLASSES, size = "large", ELM_Attention = args.elm_attention, Infor_Recoupling = args.infor_recoupling)
-    elif args.model == "bnext_super":
-        model_student = BNext(num_classes = CLASSES, size = "super", ELM_Attention = args.elm_attention, Infor_Recoupling = args.infor_recoupling)
+    #elif args.model == "bnext_super":
+    #    model_student = BNext(num_classes = CLASSES, size = "super", ELM_Attention = args.elm_attention, Infor_Recoupling = args.infor_recoupling)
     elif args.model == "bnext18":
         model_student = BNext18(num_classes = CLASSES)
     else:
@@ -504,8 +504,7 @@ def main_worker(gpu, ngpus_per_node, args):
 
             traindir = os.path.join(args.data, 'train')
             valdir = os.path.join(args.data, 'val')
-            #normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
-            #                         std=[0.229, 0.224, 0.225])
+            
             normalize = transforms.Normalize(mean = mean, std = std)
         # data augmentation
             crop_scale = 0.08
