@@ -17,11 +17,8 @@ stage_out_channel_small = [48] + [96] + [192] * 2 + [384] * 2 + [768] * 6 + [153
 # stage ratio 2:2:4:2
 stage_out_channel_middle = [48] + [96] + [192] * 4 + [384] * 4 + [768] * 8 + [1536] * 4
 
-# stage ratio 2:2:4:2
-#stage_out_channel_large = [48] + [96] + [192] * 4 + [384] * 4 + [768] * 16 + [1536] * 4
-
 # stage ratio 2:2:8:2
-stage_out_channel_super = [64] + [128] + [256] * 4 + [512] * 4 + [1024] * 16 + [2048] * 4
+stage_out_channel_large = [64] + [128] + [256] * 4 + [512] * 4 + [1024] * 16 + [2048] * 4
 
 
 def conv3x3(in_planes, out_planes, kernel_size=3, stride=1, groups=1, dilation=1):
@@ -366,8 +363,6 @@ class BNext(nn.Module):
             stage_out_channel = stage_out_channel_middle
         elif size == "large":
             stage_out_channel = stage_out_channel_large
-        elif size == "super":
-            stage_out_channel = stage_out_channel_super
         else:
             raise ValueError("The size is not defined!")
 
@@ -408,9 +403,6 @@ class BNext(nn.Module):
 
 if __name__ == "__main__":
     model = nn.DataParallel(BNext(num_classes=1000, size="super", quant=False)).cpu()
-    model_dir = "/data/scratch/nianhui.guo/BitReMixNet/mobilenet/USI_Version/models/ImageNet_reactnet_super_optimizer_AdamW_mixup_0.0_cutmix_0.0_aug_repeats_1_KD_4_assistant_3_EfficientNet_B0_HK_True_Instance_aa_rand-m7-mstd0.5-inc1__elm_True_recoup_True_0/checkpoint.pth.tar"
-    checkpoints = torch.load(model_dir, map_location = "cpu")
-    model.load_state_dict(checkpoints['state_dict'], strict = False)
     print(model.eval().cuda(0)(torch.randn(1, 3, 224, 224).cuda(0)))
     #summary(model, input_size=(1, 3, 224, 224))
 

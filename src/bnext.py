@@ -17,9 +17,6 @@ stage_out_channel_small = [48] + [96] + [192] * 2 + [384] * 2 + [768] * 6 + [153
 #stage ratio 2:2:4:2
 stage_out_channel_middle = [48] + [96] + [192] * 4 + [384] * 4 + [768] * 8 + [1536] *4
 
-#stage ratio 2:2:4:2
-#stage_out_channel_large = [48] + [96] + [192] * 4 + [384] * 4 + [768] * 16 + [1536] * 4
-
 #stage ratio 2:2:8:2
 stage_out_channel_large = [64] + [128] + [256] * 4 + [512] * 4 + [1024] * 16 + [2048] * 4
 
@@ -98,11 +95,13 @@ class HardBinaryConv(nn.Module):
         self.number_of_weights = in_chn // groups * out_chn * kernel_size * kernel_size
         self.shape = (out_chn, in_chn//groups, kernel_size, kernel_size)
         self.weight = nn.Parameter(torch.randn((self.shape)) * 0.001, requires_grad=True)
-        #self.weight_bias = nn.Parameter(torch.zeros(out_chn, in_chn, 1, 1))
+        
         self.register_buffer("temperature", torch.ones(1))
 
     def forward(self, x):
-        self.weight.data.clamp_(-1.5, 1.5)
+        if self.training:
+            self.weight.data.clamp_(-1.5, 1.5)
+        
         real_weights = self.weight
         
         if self.temperature < 1e-7:
@@ -110,6 +109,7 @@ class HardBinaryConv(nn.Module):
         else:
             binary_weights_no_grad = (real_weights/self.temperature.clamp(min = 1e-8)).clamp(-1, 1)
         cliped_weights = real_weights
+        
         if self.training:
             binary_weights = binary_weights_no_grad.detach() - cliped_weights.detach() + cliped_weights
         else:
@@ -283,6 +283,7 @@ class FFN_1x1(nn.Module):
             self.scale = nn.Parameter(torch.ones(1, planes, 1, 1)*0.5)        
          
     def forward(self, input):
+        
         residual = input
 
         if self.stride == 2:
@@ -437,8 +438,6 @@ class BNext(nn.Module):
             stage_out_channel = stage_out_channel_middle
         elif size == "large":
             stage_out_channel = stage_out_channel_large
-        #elif size == "super":
-        #    stage_out_channel = stage_out_channel_super
         else:
             raise ValueError("The size is not defined!")
 
@@ -457,6 +456,7 @@ class BNext(nn.Module):
 
         self.feature = nn.ModuleList()
         drop_rates = [x.item() for x in torch.linspace(0, drop_rate, (len(stage_out_channel)))]
+        
         for i in range(len(stage_out_channel)):
             if i == 0:
                 self.feature.append(firstconv3x3(3, stage_out_channel[i], 1 if num_classes != 1000 else 2))
@@ -485,6 +485,6 @@ class BNext(nn.Module):
 
 
 if __name__ == "__main__":
-    model = nn.DataParallel(BNext(num_classes=1000, size="super")).cpu()
+    model = nn.DataParallel(BNext(num_classes=1000, size="large")).cpu()
     print(model.eval().cuda(0)(torch.randn(1, 3, 224, 224).cuda(0)))
  
