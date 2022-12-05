@@ -114,8 +114,7 @@ class HardBinaryConv(nn.Module):
             binary_weights = binary_weights_no_grad.detach() - cliped_weights.detach() + cliped_weights
         else:
             binary_weights =  binary_weights_no_grad
-        print(x)
-        print(binary_weights)
+        
         y = F.conv2d(x, binary_weights, stride=self.stride, padding=self.padding, groups = self.groups)
 
         return y

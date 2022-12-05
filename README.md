@@ -1,4 +1,4 @@
-# Join The High Accuracy Club on ImageNet Dataset With A Binary Neural Network Ticket
+# Join The High Accuracy Club on ImageNet With A Binary Neural Network Ticket
 
 This is the official code of paper [Guo, N., Bethge, J., Meinel, C. and Yang, H., 2022. Join the High Accuracy Club on ImageNet with A Binary Neural Network Ticket. arXiv preprint arXiv:2211.12933.](https://arxiv.org/abs/2211.12933).
 ### 1.Introduction
@@ -11,7 +11,7 @@ Binary neural networks are the extreme case of network quantization, which has l
 ![Convolution Comparison](https://user-images.githubusercontent.com/24189567/204559496-1729c13d-4149-43b5-b674-d0e3df81a72a.jpg)
 * **Figure**: Convolution module comparison. a) is the basic module of XNOR Net. b) is the basic module of Real2Binary Net. c) is the core convolution processor in our design with adaptive mix2binary attention.
 
-## 2.Pretrained Modles
+## 2.Pretrained Models
 |Method | Top-1 Acc| Pretrained Models| 
 |:---:    | :---:     | :---:               |
 |BNext-T|  72.4 % |  [BNext-T](https://owncloud.hpi.de/s/jKjwDk35vVRPQN0)                  |  
