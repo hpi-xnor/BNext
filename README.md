@@ -1,6 +1,6 @@
 # Join The High Accuracy Club on ImageNet With A Binary Neural Network Ticket
 
-This is the official code of paper [Guo, N., Bethge, J., Meinel, C. and Yang, H., 2022. Join the High Accuracy Club on ImageNet with A Binary Neural Network Ticket. arXiv preprint arXiv:2211.12933.](https://arxiv.org/abs/2211.12933).
+This is the official code of the paper [Guo, N., Bethge, J., Meinel, C. and Yang, H., 2022. Join the High Accuracy Club on ImageNet with A Binary Neural Network Ticket. arXiv preprint arXiv:2211.12933.](https://arxiv.org/abs/2211.12933).
 ### 1.Introduction
 
 Binary neural networks are the extreme case of network quantization, which has long been thought of as a potential edge machine learning solution. However, the significant accuracy gap to the full-precision counterparts restricts their creative potential for mobile applications. In this work, we revisit the potential of binary neural networks and focus on a compelling but unanswered problem: how can a binary neural network achieve the crucial accuracy level (e.g., 80%) on ILSVRC-2012 ImageNet? We achieve this goal by enhancing the optimization process from three complementary perspectives: (1) We design a novel binary architecture BNext based on a comprehensive study of binary architectures and their optimization process. (2) We propose a novel knowledge-distillation technique to alleviate the counter-intuitive overfitting problem observed when attempting to train extremely accurate binary models. (3) We analyze the data augmentation pipeline for binary networks and modernize it with up-to-date techniques from full-precision models. The evaluation results on ImageNet show that BNext, for the first time, pushes the binary model accuracy boundary to 80.57% and significantly outperforms all the existing binary networks.
@@ -27,3 +27,13 @@ Binary neural networks are the extreme case of network quantization, which has l
 ![Feature_Visualization_BNext_Tiny](https://user-images.githubusercontent.com/24189567/205326008-fde4e29b-e52a-4a90-81f9-88a45e736c8e.jpg)
 * **Figure**: Visualizing the diversity of binary features in BNext-T model. The input image is resized as 1024x1024.
 
+### 5. Reference
+If you find our code useful for your research, please cite our paper as follows:
+```
+@article{guo2022join,
+  title={Join the High Accuracy Club on ImageNet with A Binary Neural Network Ticket},
+  author={Guo, Nianhui and Bethge, Joseph and Meinel, Christoph and Yang, Haojin},
+  journal={arXiv preprint arXiv:2211.12933},
+  year={2022}
+}
+```
