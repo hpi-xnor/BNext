@@ -402,7 +402,7 @@ class BNext(nn.Module):
 
 
 if __name__ == "__main__":
-    model = nn.DataParallel(BNext(num_classes=1000, size="super", quant=False)).cpu()
+    model = nn.DataParallel(BNext(num_classes=1000, size="large", quant=False)).cpu()
     print(model.eval().cuda(0)(torch.randn(1, 3, 224, 224).cuda(0)))
     #summary(model, input_size=(1, 3, 224, 224))
 
