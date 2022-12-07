@@ -14,10 +14,10 @@ Binary neural networks are the extreme case of network quantization, which has l
 ## 2.Pretrained Models
 |Method | Top-1 Acc| Pretrained Models| 
 |:---:    | :---:     | :---:               |
-|BNext-T|  72.4 % |  [BNext-T](https://owncloud.hpi.de/s/jKjwDk35vVRPQN0)                  |  
-|BNext-S|  76.1 % |  [BNext-S](https://owncloud.hpi.de/s/bHLM7lqfzm58kIW)                  |
-|BNext-M|  78.3 % |  [BNext-M](https://owncloud.hpi.de/s/jU5m9v4ADsJKZsa)                  |
-|BNext-L|  80.6 % |  [BNext-L](https://owncloud.hpi.de/s/zQHrlxiQ6XbjCbz)                  |
+|BNext-T|  72.4 % |  [BNext-T](https://nextcloud.hpi.de/s/zQCkteDoMbAeS25)                  |  
+|BNext-S|  76.1 % |  [BNext-S](https://nextcloud.hpi.de/s/tCk25K3xdKCELNK)                  |
+|BNext-M|  78.3 % |  [BNext-M](https://nextcloud.hpi.de/s/Wmq82dw5GMBzW4g)                  |
+|BNext-L|  80.6 % |  [BNext-L](https://nextcloud.hpi.de/s/AA3eb7L38myLjtw)                  |
  
 ## 3.Training Procedure
 ![Training Procedure](https://user-images.githubusercontent.com/24189567/204558527-04de1a26-bfce-4a16-87f9-f781b13988f7.jpg)
