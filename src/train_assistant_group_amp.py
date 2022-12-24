@@ -224,7 +224,7 @@ def find_free_port():
 def main_worker(gpu, ngpus_per_node, args):
     if args.dataset == "ImageNet":
         CLASSES = 1000
-    elif args.dataset == "CIAR100":
+    elif args.dataset == "CIFAR100":
         CLASSES = 100
     else:
         CLASSES = 10
@@ -616,7 +616,7 @@ def main_worker(gpu, ngpus_per_node, args):
 
     #if not args.multiprocessing_distributed or args.local_rank == 0:
 
-    valid_obj, valid_top1_acc, valid_top5_acc = validate(epoch, val_loader, model_student, criterion, args)
+    #valid_obj, valid_top1_acc, valid_top5_acc = validate(epoch, val_loader, model_student, criterion, args)
 
 
     while epoch < args.epochs:
@@ -721,7 +721,7 @@ def train(epoch, train_loader, model_student, model_teacher, criterion, optimize
     else:
         mixup = None
 
-    if len(model_teacher) >=2:
+    if model_teacher is not None and len(model_teacher) >=2:
         if epoch /(args.epochs/args.assistant_teacher_num) < 1 and args.assistant_teacher_num > 0:
             model_teacher_r = [model_teacher[0][0]] + [model_teacher[1]]
         elif epoch /(args.epochs/args.assistant_teacher_num) < 2 and args.assistant_teacher_num > 1:
@@ -786,7 +786,7 @@ def train(epoch, train_loader, model_student, model_teacher, criterion, optimize
             alpha = torch.zeros(1)
 
         loss_all = loss
-        
+    
         # measure accuracy and record loss
         if mixup is None:
             prec1, prec5 = accuracy(logits_student, target, topk=(1, 5))
