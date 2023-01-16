@@ -11,7 +11,17 @@ Binary neural networks are the extreme case of network quantization, which has l
 ![Convolution Comparison](https://user-images.githubusercontent.com/24189567/204559496-1729c13d-4149-43b5-b674-d0e3df81a72a.jpg)
 * **Figure**: Convolution module comparison. a) is the basic module of XNOR Net. b) is the basic module of Real2Binary Net. c) is the core convolution processor in our design with adaptive mix2binary attention.
 
-## 2.Pretrained Models
+## 2.Installation
+
+To build the environment for this project on your system, run the following command:
+```
+sudo pip install -r requirements.txt
+```
+
+This will install all the packages listed in the requirements.txt file.
+
+
+## 3.Pretrained Models
 |Method | Top-1 Acc| Pretrained Models| 
 |:---:    | :---:     | :---:               |
 |BNext-T|  72.4 % |  [BNext-T](https://drive.google.com/file/d/1CJ0XOEhoHuNe-tDYJaAOd1j4YyNXuyas/view?usp=sharing)                  |  
@@ -19,15 +29,15 @@ Binary neural networks are the extreme case of network quantization, which has l
 |BNext-M|  78.3 % |  [BNext-M](https://drive.google.com/file/d/1xyKnA6SsG4ZpguNQQrB6Yz-J5dzXYfKE/view?usp=sharing)                  |
 |BNext-L|  80.6 % |  [BNext-L](https://drive.google.com/file/d/1XGKcX2Zl_fIU9wPBDjTTxstOBfwQH8xc/view?usp=sharing)                  |
  
-## 3.Training Procedure
+## 4.Training Procedure
 ![Training Procedure](https://user-images.githubusercontent.com/24189567/204558527-04de1a26-bfce-4a16-87f9-f781b13988f7.jpg)
 * **Figure**: The loss curve, accuracy curve and temperature curve during the optimization process 
 
-### 4. Feature Visualization
+### 5. Feature Visualization
 ![Feature_Visualization_BNext_Tiny](https://user-images.githubusercontent.com/24189567/205326008-fde4e29b-e52a-4a90-81f9-88a45e736c8e.jpg)
 * **Figure**: Visualizing the diversity of binary features in BNext-T model. The input image is resized as 1024x1024.
 
-### 5. Reference
+### 6. Reference
 If you find our code useful for your research, please cite our paper as follows:
 ```
 @article{guo2022join,
