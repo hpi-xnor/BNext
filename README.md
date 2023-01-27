@@ -21,14 +21,32 @@ sudo pip install -r requirements.txt
 This will install all the packages listed in the requirements.txt file.
 
 
-## 3.Pretrained Models
+## 3.Pretrained Models and Comparison With Existing Designs
+#### Pretrained Model
 |Method |BOPs (G)|Binarization Degree (BOPs/OPs)|Top-1 Acc  |Pretrained Models| 
 |:---:    | :---: | :---: | :---:  | :---:               |
 |BNext-T| 0.077 |97.81% |72.4 % |  [BNext-T](https://drive.google.com/file/d/1CJ0XOEhoHuNe-tDYJaAOd1j4YyNXuyas/view?usp=sharing)                  |  
 |BNext-S| 0.172 |98.47% |76.1 % |  [BNext-S](https://drive.google.com/file/d/1NcVM5Qb1K9Oq_sjEA1lGtp7kVbsfTLsa/view?usp=sharing)                  |
 |BNext-M| 0.317 |99.02% |78.3 % |  [BNext-M](https://drive.google.com/file/d/1xyKnA6SsG4ZpguNQQrB6Yz-J5dzXYfKE/view?usp=sharing)                  |
 |BNext-L| 0.819 |99.49% |80.6 % |  [BNext-L](https://drive.google.com/file/d/1XGKcX2Zl_fIU9wPBDjTTxstOBfwQH8xc/view?usp=sharing)                  |
- 
+
+#### Comparison With Existing Designs
+Methods | with BN | with PReLU | with SE | Quantization | Degree of Binarization (BOPs/(64*Ops))
+:---: | :---: | :---: | :---: | :---: | :---:
+BNN | yes | No | No |  | 18.07%
+XNOR-Net | yes | No | No |  | 18.07%
+BiRealNet-18 | yes | yes | No |  | 17.86%
+MeiliusNet-18 | yes | No | No |  | 16.76%
+Real2BinaryNet | yes | yes | yes |  | 14.34%
+ReActNet-BiR18 | yes | yes | No |  | 13.89%
+ReActNet-A | yes | yes | No |  | 86.50%
+PokeBNN-2.0x | yes | yes | yes | Yes | 97.15%
+BNext18 | yes | yes | yes | Yes | 61.04%
+BNext-T (ours) | yes | yes | yes | Yes | 97.81%
+BNext-S (ours) | yes | yes | yes | Yes | 98.47%
+BNext-M (ours) | yes | yes | yes | Yes | 99.02%
+BNext-L (ours) | yes | yes | yes | Yes | 99.49%
+
 ## 4.Training Procedure
 ![Training Procedure](https://user-images.githubusercontent.com/24189567/204558527-04de1a26-bfce-4a16-87f9-f781b13988f7.jpg)
 * **Figure**: The loss curve, accuracy curve and temperature curve during the optimization process 
