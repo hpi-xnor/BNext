@@ -41,7 +41,7 @@ Real2BinaryNet | yes | yes | yes |  | 14.34%
 ReActNet-BiR18 | yes | yes | No |  | 13.89%
 ReActNet-A | yes | yes | No |  | 86.50%
 PokeBNN-2.0x | yes | yes | yes | Yes | 97.15%
-BNext18 | yes | yes | yes | Yes | 61.04%
+BNext-18 | yes | yes | yes | Yes | 61.04%
 BNext-T (ours) | yes | yes | yes | Yes | 97.81%
 BNext-S (ours) | yes | yes | yes | Yes | 98.47%
 BNext-M (ours) | yes | yes | yes | Yes | 99.02%
