@@ -23,7 +23,7 @@ This will install all the packages listed in the requirements.txt file.
 
 ## 3.Pretrained Models and Comparison With Existing Designs
 #### Pretrained Model
-|Method |BOPs (G)|Binarization Degree (BOPs/OPs)|Top-1 Acc  |Pretrained Models| 
+|Method |BOPs (G)|Binarization Degree (BOPs/(64*OPs))|Top-1 Acc  |Pretrained Models| 
 |:---:    | :---: | :---: | :---:  | :---:               |
 |BNext-T| 0.077 |97.81% |72.4 % |  [BNext-T](https://drive.google.com/file/d/1CJ0XOEhoHuNe-tDYJaAOd1j4YyNXuyas/view?usp=sharing)                  |  
 |BNext-S| 0.172 |98.47% |76.1 % |  [BNext-S](https://drive.google.com/file/d/1NcVM5Qb1K9Oq_sjEA1lGtp7kVbsfTLsa/view?usp=sharing)                  |
