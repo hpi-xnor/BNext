@@ -33,19 +33,19 @@ This will install all the packages listed in the requirements.txt file.
 #### Comparison With Existing Designs
 Methods | with BN | with PReLU | with SE | Quantization | Degree of Binarization (BOPs/(64*Ops))
 :---: | :---: | :---: | :---: | :---: | :---:
-BNN | yes | No | No |  | 18.07%
-XNOR-Net | yes | No | No |  | 18.07%
-BiRealNet-18 | yes | yes | No |  | 17.86%
-MeiliusNet-18 | yes | No | No |  | 16.76%
-Real2BinaryNet | yes | yes | yes |  | 14.34%
-ReActNet-BiR18 | yes | yes | No |  | 13.89%
-ReActNet-A | yes | yes | No |  | 86.50%
-PokeBNN-2.0x | yes | yes | yes | Yes | 97.15%
-BNext-18 | yes | yes | yes | Yes | 61.04%
-BNext-T (ours) | yes | yes | yes | Yes | 97.81%
-BNext-S (ours) | yes | yes | yes | Yes | 98.47%
-BNext-M (ours) | yes | yes | yes | Yes | 99.02%
-BNext-L (ours) | yes | yes | yes | Yes | 99.49%
+BNN | Yes | No | No |  | 18.07%
+XNOR-Net | Yes | No | No |  | 18.07%
+BiRealNet-18 | Yes | Yes | No |  | 17.86%
+MeiliusNet-18 | Yes | No | No |  | 16.76%
+Real2BinaryNet | Yes | Yes | Yes |  | 14.34%
+ReActNet-BiR18 | Yes | Yes | No |  | 13.89%
+ReActNet-A | Yes | Yes | No |  | 86.50%
+PokeBNN-2.0x | Yes | Yes | Yes | Yes | 97.15%
+BNext-18 | Yes | Yes | Yes | Yes | 61.04%
+BNext-T (ours) | Yes | Yes | Yes | Yes | 97.81%
+BNext-S (ours) | Yes | Yes | Yes | Yes | 98.47%
+BNext-M (ours) | Yes | Yes | Yes | Yes | 99.02%
+BNext-L (ours) | Yes | Yes | Yes | Yes | 99.49%
 
 ## 4.Training Procedure
 ![Training Procedure](https://user-images.githubusercontent.com/24189567/204558527-04de1a26-bfce-4a16-87f9-f781b13988f7.jpg)
