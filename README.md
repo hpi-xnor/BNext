@@ -32,7 +32,7 @@ This will install all the packages listed in the requirements.txt file.
 
 #### Comparison With Existing Designs
 Methods | with BN | with PReLU | with SE | Quantization | Degree of Binarization (BOPs/(64*Ops))
-:---: | :---: | :---: | :---: | :---: | :---:
+:----: | :---: | :---: | :---: | :---: | :---:
 BNN | Yes | No | No |  | 18.07%
 XNOR-Net | Yes | No | No |  | 18.07%
 BiRealNet-18 | Yes | Yes | No |  | 17.86%
