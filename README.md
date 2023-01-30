@@ -31,21 +31,21 @@ This will install all the packages listed in the requirements.txt file.
 |BNext-L| 0.819 |99.49% |80.6 % |  [BNext-L](https://drive.google.com/file/d/1XGKcX2Zl_fIU9wPBDjTTxstOBfwQH8xc/view?usp=sharing)                  |
 
 #### Comparison With Existing Designs
-Methods | with BN | with PReLU | with SE | Quantization | Degree of Binarization (BOPs/(64*Ops))
-:----: | :---: | :---: | :---: | :---: | :---:
-BNN | Yes | No | No |  | 18.07%
-XNOR-Net | Yes | No | No |  | 18.07%
-BiRealNet-18 | Yes | Yes | No |  | 17.86%
-MeiliusNet-18 | Yes | No | No |  | 16.76%
-Real2BinaryNet | Yes | Yes | Yes |  | 14.34%
-ReActNet-BiR18 | Yes | Yes | No |  | 13.89%
-ReActNet-A | Yes | Yes | No |  | 86.50%
-PokeBNN-2.0x | Yes | Yes | Yes | Yes | 97.15%
-BNext-18 | Yes | Yes | Yes | Yes | 61.04%
-BNext-T (ours) | Yes | Yes | Yes | Yes | 97.81%
-BNext-S (ours) | Yes | Yes | Yes | Yes | 98.47%
-BNext-M (ours) | Yes | Yes | Yes | Yes | 99.02%
-BNext-L (ours) | Yes | Yes | Yes | Yes | 99.49%
+Methods | with BN | with PReLU | with SE | Quantization | KD |Degree of Binarization (BOPs/(64*Ops))
+:----: | :---: | :----: | :----: | :----: | :----: | :-----: 
+BNN | Yes |  |  |  | Yes |18.07%
+XNOR-Net | Yes |  |  |  | Yes |18.07%
+BiRealNet-18 | Yes | Yes |  |  | Yes | 17.86%
+MeiliusNet-18 | Yes |  |  |  | Yes |16.76%
+Real2BinaryNet | Yes | Yes | Yes |  | Yes |14.34%
+ReActNet-BiR18 | Yes | Yes |  |  | Yes |13.89%
+ReActNet-A | Yes | Yes |  |  | Yes |86.50%
+PokeBNN-2.0x | Yes | Yes | Yes | Yes | Yes| 97.15%
+BNext-18 | Yes | Yes | Yes | Yes | Yes| 61.04%
+BNext-T (ours) | Yes | Yes | Yes | Yes | Yes| 97.81%
+BNext-S (ours) | Yes | Yes | Yes | Yes | Yes| 98.47%
+BNext-M (ours) | Yes | Yes | Yes | Yes | Yes| 99.02%
+BNext-L (ours) | Yes | Yes | Yes | Yes | Yes|99.49%
 
 ## 4.Training Procedure
 ![Training Procedure](https://user-images.githubusercontent.com/24189567/204558527-04de1a26-bfce-4a16-87f9-f781b13988f7.jpg)
